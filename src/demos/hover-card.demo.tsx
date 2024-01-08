@@ -1,0 +1,55 @@
+import { MapPinIcon } from './lucide-icons'
+import { HStack, Stack, styled } from 'styled-system/jsx'
+import * as Avatar from '../ui/avatar'
+import type { HoverCardProps } from '../ui/hover-card'
+import * as HoverCard from '../ui/hover-card'
+import { Icon } from '../ui/icon'
+import { Text } from '../ui/text'
+
+export const Demo = (props: HoverCardProps) => (
+  <HoverCard.Root {...props}>
+    <HoverCard.Trigger asChild>
+      <styled.a
+        href='https://twitter.com/grizzly_codes/'
+        target='_blank'
+        textStyle='sm'
+        fontWeight='medium'
+      >
+        @grizzly_codes
+      </styled.a>
+    </HoverCard.Trigger>
+
+    <HoverCard.Positioner>
+      <HoverCard.Content>
+        <HoverCard.Arrow>
+          <HoverCard.ArrowTip />
+        </HoverCard.Arrow>
+        <Stack gap='4' direction='row'>
+          <Avatar.Root>
+            <Avatar.Fallback>CS</Avatar.Fallback>
+            <Avatar.Image
+              src='https://avatars.githubusercontent.com/u/1846056'
+              alt='avatar'
+            />
+          </Avatar.Root>
+          <Stack gap='3'>
+            <Stack gap='1'>
+              <Text textStyle='sm' fontWeight='semibold'>
+                @grizzly_codes
+              </Text>
+              <Text textStyle='sm' color='fg.muted'>
+                Staff Software Engineer working at vivenu GmbH
+              </Text>
+            </Stack>
+            <HStack gap='1' color='fg.subtle' textStyle='xs'>
+              <Icon>
+                <MapPinIcon />
+              </Icon>
+              <Text>Joined Dezember 2011</Text>
+            </HStack>
+          </Stack>
+        </Stack>
+      </HoverCard.Content>
+    </HoverCard.Positioner>
+  </HoverCard.Root>
+)
