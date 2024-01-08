@@ -1,4 +1,3 @@
-import { Component } from 'vitro'
 import { Assign } from '../lib/create-style-context'
 import { icon, type IconVariantProps } from 'styled-system/recipes'
 
@@ -7,7 +6,7 @@ export type IconProps = Assign<
   IconVariantProps & { children: JSX.Child }
 >
 
-export const Icon: Component<IconProps> = (props: IconProps) => {
+export const Icon: JSX.Component<IconProps> = (props: IconProps) => {
   const [iconProps, otherProps] = icon.splitVariantProps(props)
   return (
     <svg asChild {...otherProps} class={[icon(iconProps), otherProps.class]} />

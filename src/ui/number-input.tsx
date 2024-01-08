@@ -8,7 +8,6 @@ import {
   type NumberInputVariantProps,
 } from 'styled-system/recipes'
 import { Assign, createStyleContext } from '../lib/create-style-context'
-import { Component } from 'vitro'
 
 const { withProvider, withContext } = createStyleContext(numberInput)
 export type NumberInputProps = Assign<
@@ -16,7 +15,7 @@ export type NumberInputProps = Assign<
   NumberInputVariantProps
 >
 
-const NumberInput: Component<NumberInputProps> = withProvider(
+const NumberInput: JSX.Component<NumberInputProps> = withProvider(
   ArkNumberInput.Root,
   'root',
 )

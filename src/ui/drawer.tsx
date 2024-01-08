@@ -4,13 +4,13 @@ import {
 } from '@vitro/ark'
 
 import { drawer, type DrawerVariantProps } from 'styled-system/recipes'
-import { Component } from 'vitro'
+
 import { Assign, createStyleContext } from '../lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(drawer)
 export type DrawerProps = Assign<ArkDrawerProps, DrawerVariantProps>
 
-const Drawer: Component<DrawerProps> = withProvider(ArkDrawer.Root)
+const Drawer: JSX.Component<DrawerProps> = withProvider(ArkDrawer.Root)
 const DrawerBackdrop = withContext(ArkDrawer.Backdrop, 'backdrop')
 const DrawerBody = withContext('div', 'body')
 const DrawerCloseTrigger = withContext(ArkDrawer.CloseTrigger, 'closeTrigger')

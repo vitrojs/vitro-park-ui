@@ -1,4 +1,3 @@
-import { Component } from 'vitro'
 import { Assign } from '../lib/create-style-context'
 import { textarea, TextareaVariantProps } from 'styled-system/recipes'
 
@@ -6,7 +5,7 @@ export type TextareaProps = Assign<
   JSX.IntrinsicElements['textarea'],
   TextareaVariantProps
 >
-export const Textarea: Component<TextareaProps> = (props) => {
+export const Textarea: JSX.Component<TextareaProps> = (props) => {
   const [variantProps, otherProps] = textarea.splitVariantProps(props)
 
   return (

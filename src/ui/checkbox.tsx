@@ -5,13 +5,12 @@ import {
 
 import { checkbox, type AccordionVariantProps } from 'styled-system/recipes'
 import { Assign, createStyleContext } from '../lib/create-style-context'
-import { Component } from 'vitro'
 
 const { withProvider, withContext } = createStyleContext(checkbox)
 
 export type CheckboxProps = Assign<ArkCheckboxProps, AccordionVariantProps>
 
-const Checkbox: Component<CheckboxProps> = withProvider(
+const Checkbox: JSX.Component<CheckboxProps> = withProvider(
   ArkCheckbox.Root,
   'root',
 )

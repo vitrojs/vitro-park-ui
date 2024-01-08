@@ -5,7 +5,6 @@ import {
 
 import { colorPicker, ColorPickerVariantProps } from 'styled-system/recipes'
 import { Assign, createStyleContext } from '../lib/create-style-context'
-import { Component } from 'vitro'
 
 const { withProvider, withContext } = createStyleContext(colorPicker)
 
@@ -14,7 +13,7 @@ export type ColorPickerProps = Assign<
   ColorPickerVariantProps
 >
 
-const ColorPicker: Component<ColorPickerProps> = withProvider(
+const ColorPicker: JSX.Component<ColorPickerProps> = withProvider(
   ArkColorPicker.Root,
   'root',
 )

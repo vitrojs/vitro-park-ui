@@ -5,12 +5,11 @@ import {
 
 import { SliderVariantProps, slider } from 'styled-system/recipes'
 import { Assign, createStyleContext } from '../lib/create-style-context'
-import { Component } from 'vitro'
 
 const { withProvider, withContext } = createStyleContext(slider)
 export type SliderProps = Assign<ArkSliderProps, SliderVariantProps>
 
-const Slider: Component<SliderProps> = withProvider(ArkSlider.Root, 'root')
+const Slider: JSX.Component<SliderProps> = withProvider(ArkSlider.Root, 'root')
 const SliderControl = withContext(ArkSlider.Control, 'control')
 const SliderLabel = withContext(ArkSlider.Label, 'label')
 const SliderMarker = withContext(ArkSlider.Marker, 'marker')

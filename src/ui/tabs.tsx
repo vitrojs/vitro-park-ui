@@ -2,7 +2,6 @@ import { Tabs as ArkTabs, type TabsProps as ArkTabsProps } from '@vitro/ark'
 
 import { tabs, type TableVariantProps } from 'styled-system/recipes'
 import { Assign, createStyleContext } from '../lib/create-style-context'
-import { Component } from 'vitro'
 
 const { withProvider, withContext } = createStyleContext(tabs)
 const Tabs = withProvider(ArkTabs.Root, 'root')

@@ -5,12 +5,11 @@ import {
 
 import { tooltip, type TooltipVariantProps } from 'styled-system/recipes'
 import { Assign, createStyleContext } from '../lib/create-style-context'
-import { Component } from 'vitro'
 
 const { withProvider, withContext } = createStyleContext(tooltip)
 export type TooltipProps = Assign<ArkTooltipProps, TooltipVariantProps>
 
-const Tooltip: Component<TooltipProps> = withProvider(ArkTooltip.Root)
+const Tooltip: JSX.Component<TooltipProps> = withProvider(ArkTooltip.Root)
 const TooltipArrow = withContext(ArkTooltip.Arrow, 'arrow')
 const TooltipArrowTip = withContext(ArkTooltip.ArrowTip, 'arrowTip')
 const TooltipContent = withContext(ArkTooltip.Content, 'content')

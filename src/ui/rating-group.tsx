@@ -5,7 +5,6 @@ import {
 
 import { RatingGroupVariantProps, ratingGroup } from 'styled-system/recipes'
 import { Assign, createStyleContext } from '../lib/create-style-context'
-import { Component } from 'vitro'
 
 const { withProvider, withContext } = createStyleContext(ratingGroup)
 export type RatingGroupProps = Assign<
@@ -13,7 +12,7 @@ export type RatingGroupProps = Assign<
   RatingGroupVariantProps
 >
 
-const RatingGroup: Component<RatingGroupProps> = withProvider(
+const RatingGroup: JSX.Component<RatingGroupProps> = withProvider(
   ArkRatingGroup.Root,
   'root',
 )

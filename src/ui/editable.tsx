@@ -5,13 +5,12 @@ import {
 
 import { editable, type EditableVariantProps } from 'styled-system/recipes'
 import { Assign, createStyleContext } from '../lib/create-style-context'
-import { Component } from 'vitro'
 
 const { withProvider, withContext } = createStyleContext(editable)
 
 export type EditableProps = Assign<ArkEditableProps, EditableVariantProps>
 
-const Editable: Component<EditableProps> = withProvider(
+const Editable: JSX.Component<EditableProps> = withProvider(
   ArkEditable.Root,
   'root',
 )

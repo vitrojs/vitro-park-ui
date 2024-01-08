@@ -5,12 +5,11 @@ import {
 
 import { PinInputVariantProps, pinInput } from 'styled-system/recipes'
 import { Assign, createStyleContext } from '../lib/create-style-context'
-import { Component } from 'vitro'
 
 const { withProvider, withContext } = createStyleContext(pinInput)
 export type PinInputProps = Assign<ArkPinInputProps, PinInputVariantProps>
 
-const PinInput: Component<PinInputProps> = withProvider(
+const PinInput: JSX.Component<PinInputProps> = withProvider(
   ArkPinInput.Root,
   'root',
 )

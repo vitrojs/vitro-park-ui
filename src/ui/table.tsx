@@ -1,6 +1,5 @@
 import { table, type TableVariantProps } from 'styled-system/recipes'
 import { Assign, createStyleContext } from '../lib/create-style-context'
-import { Component } from 'vitro'
 
 const { withProvider, withContext } = createStyleContext(table)
 export type TableProps = Assign<
@@ -8,7 +7,7 @@ export type TableProps = Assign<
   TableVariantProps
 >
 
-const Table: Component<TableProps> = withProvider('table', 'root')
+const Table: JSX.Component<TableProps> = withProvider('table', 'root')
 const TableBody = withContext('tbody', 'body')
 const TableCaption = withContext('caption', 'caption')
 const TableCell = withContext('td', 'cell')

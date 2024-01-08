@@ -5,12 +5,11 @@ import {
 
 import { splitter, SplitterVariantProps } from 'styled-system/recipes'
 import { Assign, createStyleContext } from '../lib/create-style-context'
-import { Component } from 'vitro'
 
 const { withProvider, withContext } = createStyleContext(splitter)
 export type SplitterProps = Assign<ArkSplitterProps, SplitterVariantProps>
 
-const Splitter: Component<SplitterProps> = withProvider(
+const Splitter: JSX.Component<SplitterProps> = withProvider(
   ArkSplitter.Root,
   'root',
 )

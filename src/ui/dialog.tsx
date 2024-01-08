@@ -5,11 +5,10 @@ import {
 
 import { dialog, type DialogVariantProps } from 'styled-system/recipes'
 import { Assign, createStyleContext } from '../lib/create-style-context'
-import { Component } from 'vitro'
 
 const { withProvider, withContext } = createStyleContext(dialog)
 export type DialogProps = Assign<ArkDialogProps, DialogVariantProps>
-const Dialog: Component<DialogProps> = withProvider(ArkDialog.Root)
+const Dialog: JSX.Component<DialogProps> = withProvider(ArkDialog.Root)
 const DialogBackdrop = withContext(ArkDialog.Backdrop, 'backdrop')
 const DialogCloseTrigger = withContext(ArkDialog.CloseTrigger, 'closeTrigger')
 const DialogContent = withContext(ArkDialog.Content, 'content')

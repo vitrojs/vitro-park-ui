@@ -5,13 +5,12 @@ import {
 
 import { CarouselVariantProps, carousel } from 'styled-system/recipes'
 import { type Assign, createStyleContext } from '../lib/create-style-context'
-import { Component } from 'vitro'
 
 const { withProvider, withContext } = createStyleContext(carousel)
 
 export type CarouselProps = Assign<ArkCarouselProps, CarouselVariantProps>
 
-const Carousel: Component<CarouselProps> = withProvider(
+const Carousel: JSX.Component<CarouselProps> = withProvider(
   ArkCarousel.Root,
   'root',
 )

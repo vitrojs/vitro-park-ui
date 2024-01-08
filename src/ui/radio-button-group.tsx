@@ -8,7 +8,6 @@ import {
   type RadioButtonGroupVariantProps,
 } from 'styled-system/recipes'
 import { Assign, createStyleContext } from '../lib/create-style-context'
-import { Component } from 'vitro'
 
 const { withProvider, withContext } = createStyleContext(radioButtonGroup)
 export type RadioButtonGroupProps = Assign<
@@ -16,7 +15,7 @@ export type RadioButtonGroupProps = Assign<
   RadioButtonGroupVariantProps
 >
 
-const RadioButtonGroup: Component<RadioButtonGroupProps> = withProvider(
+const RadioButtonGroup: JSX.Component<RadioButtonGroupProps> = withProvider(
   ArkRadioButtonGroup.Root,
   'root',
 )

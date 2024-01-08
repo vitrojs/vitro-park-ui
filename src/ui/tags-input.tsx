@@ -5,11 +5,10 @@ import {
 
 import { tagsInput, type TagsInputVariantProps } from 'styled-system/recipes'
 import { Assign, createStyleContext } from '../lib/create-style-context'
-import { Component } from 'vitro'
 
 const { withProvider, withContext } = createStyleContext(tagsInput)
 export type TagsInputProps = Assign<ArkTagsInputProps, TagsInputVariantProps>
-const TagsInput: Component<TagsInputProps> = withProvider(
+const TagsInput: JSX.Component<TagsInputProps> = withProvider(
   ArkTagsInput.Root,
   'root',
 )

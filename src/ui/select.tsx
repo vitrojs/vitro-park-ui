@@ -6,7 +6,6 @@ import {
 
 import { select, type SelectVariantProps } from 'styled-system/recipes'
 import { Assign, createStyleContext } from '../lib/create-style-context'
-import { Component } from 'vitro'
 
 const { withProvider, withContext } = createStyleContext(select)
 
@@ -15,7 +14,7 @@ export type SelectProps = Assign<
   SelectVariantProps
 >
 
-const Select: Component<SelectProps> = withProvider(ArkSelect.Root, 'root')
+const Select: JSX.Component<SelectProps> = withProvider(ArkSelect.Root, 'root')
 const SelectClearTrigger = withContext(ArkSelect.ClearTrigger, 'clearTrigger')
 const SelectContent = withContext(ArkSelect.Content, 'content')
 const SelectControl = withContext(ArkSelect.Control, 'control')

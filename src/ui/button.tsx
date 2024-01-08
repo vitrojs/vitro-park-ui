@@ -1,6 +1,9 @@
 import { button, ButtonVariantProps } from 'styled-system/recipes'
 
-export type ButtonProps = Omit<JSX.IntrinsicElements['button'], keyof ButtonVariantProps> &
+export type ButtonProps = Omit<
+  JSX.IntrinsicElements['button'],
+  keyof ButtonVariantProps
+> &
   ButtonVariantProps
 
 export const Button = (props: ButtonProps) => {

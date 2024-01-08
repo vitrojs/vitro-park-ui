@@ -5,13 +5,12 @@ import {
 
 import { type AvatarVariantProps, avatar } from 'styled-system/recipes'
 import { createStyleContext } from '../lib/create-style-context'
-import { Component } from 'vitro'
 
 export type AvatarProps = AvatarVariantProps & ArkAvatarProps
 
 const { withProvider, withContext } = createStyleContext(avatar)
 
-const Avatar: Component<AvatarProps> = withProvider(ArkAvatar.Root, 'root')
+const Avatar: JSX.Component<AvatarProps> = withProvider(ArkAvatar.Root, 'root')
 const AvatarFallback = withContext(ArkAvatar.Fallback, 'fallback')
 const AvatarImage = withContext(ArkAvatar.Image, 'image')
 

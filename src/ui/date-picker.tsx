@@ -4,13 +4,13 @@ import {
 } from '@vitro/ark'
 
 import { datePicker, type DatePickerVariantProps } from 'styled-system/recipes'
-import { Component } from 'vitro'
+
 import { Assign, createStyleContext } from '../lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(datePicker)
 export type DatePickerProps = Assign<ArkDatePickerProps, DatePickerVariantProps>
 
-const DatePicker: Component<DatePickerProps> = withProvider(
+const DatePicker: JSX.Component<DatePickerProps> = withProvider(
   ArkDatePicker.Root,
   'root',
 )

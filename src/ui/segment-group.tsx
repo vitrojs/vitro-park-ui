@@ -5,14 +5,13 @@ import {
 
 import { SegmentGroupVariantProps, segmentGroup } from 'styled-system/recipes'
 import { Assign, createStyleContext } from '../lib/create-style-context'
-import { Component } from 'vitro'
 
 const { withProvider, withContext } = createStyleContext(segmentGroup)
 export type SegmentGroupProps = Assign<
   ArkSegmentGroupProps,
   SegmentGroupVariantProps
 >
-const SegmentGroup: Component<SegmentGroupProps> = withProvider(
+const SegmentGroup: JSX.Component<SegmentGroupProps> = withProvider(
   ArkSegmentGroup.Root,
   'root',
 )

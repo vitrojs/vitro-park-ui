@@ -5,14 +5,13 @@ import {
 
 import { ToggleGroupVariantProps, toggleGroup } from 'styled-system/recipes'
 import { Assign, createStyleContext } from '../lib/create-style-context'
-import { Component } from 'vitro'
 
 const { withProvider, withContext } = createStyleContext(toggleGroup)
 export type ToggleGroupProps = Assign<
   ArkToggleGroupProps,
   ToggleGroupVariantProps
 >
-const ToggleGroup: Component<ToggleGroupProps> = withProvider(
+const ToggleGroup: JSX.Component<ToggleGroupProps> = withProvider(
   ArkToggleGroup.Root,
   'root',
 )

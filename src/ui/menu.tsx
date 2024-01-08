@@ -2,12 +2,11 @@ import { Menu as ArkMenu, type MenuProps as ArkMenuProps } from '@vitro/ark'
 
 import { MenuVariantProps, menu } from 'styled-system/recipes'
 import { Assign, createStyleContext } from '../lib/create-style-context'
-import { Component } from 'vitro'
 
 const { withProvider, withContext } = createStyleContext(menu)
 export type MenuProps = Assign<ArkMenuProps, MenuVariantProps>
 
-const Menu: Component<MenuProps> = withProvider(ArkMenu.Root)
+const Menu: JSX.Component<MenuProps> = withProvider(ArkMenu.Root)
 const MenuArrow = withContext(ArkMenu.Arrow, 'arrow')
 const MenuArrowTip = withContext(ArkMenu.ArrowTip, 'arrowTip')
 const MenuContent = withContext(ArkMenu.Content, 'content')
