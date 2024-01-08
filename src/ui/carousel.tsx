@@ -1,11 +1,20 @@
-import { Carousel as ArkCarousel } from '@vitro/ark/carousel'
+import {
+  Carousel as ArkCarousel,
+  type CarouselProps as ArkCarouselProps,
+} from '@vitro/ark'
 
-import { carousel } from 'styled-system/recipes'
-import { createStyleContext } from '../lib/create-style-context'
+import { CarouselVariantProps, carousel } from 'styled-system/recipes'
+import { type Assign, createStyleContext } from '../lib/create-style-context'
+import { Component } from 'vitro'
 
 const { withProvider, withContext } = createStyleContext(carousel)
 
-const Carousel = withProvider(ArkCarousel.Root, 'root')
+export type CarouselProps = Assign<ArkCarouselProps, CarouselVariantProps>
+
+const Carousel: Component<CarouselProps> = withProvider(
+  ArkCarousel.Root,
+  'root',
+)
 const CarouselControl = withContext(ArkCarousel.Control, 'control')
 const CarouselIndicator = withContext(ArkCarousel.Indicator, 'indicator')
 const CarouselIndicatorGroup = withContext(
@@ -29,15 +38,15 @@ const PrevTrigger = CarouselPrevTrigger
 const Viewport = CarouselViewport
 
 export {
-  Carousel,
-  CarouselControl,
-  CarouselIndicator,
-  CarouselIndicatorGroup,
-  CarouselItem,
-  CarouselItemGroup,
-  CarouselNextTrigger,
-  CarouselPrevTrigger,
-  CarouselViewport,
+  // Carousel,
+  // CarouselControl,
+  // CarouselIndicator,
+  // CarouselIndicatorGroup,
+  // CarouselItem,
+  // CarouselItemGroup,
+  // CarouselNextTrigger,
+  // CarouselPrevTrigger,
+  // CarouselViewport,
   Control,
   Indicator,
   IndicatorGroup,

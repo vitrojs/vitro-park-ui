@@ -1,11 +1,16 @@
-import { Dialog as ArkDrawer } from '@vitro/ark/dialog'
+import {
+  Dialog as ArkDrawer,
+  type DialogProps as ArkDrawerProps,
+} from '@vitro/ark'
 
-import { drawer } from 'styled-system/recipes'
-import { createStyleContext } from '../lib/create-style-context'
+import { drawer, type DrawerVariantProps } from 'styled-system/recipes'
+import { Component } from 'vitro'
+import { Assign, createStyleContext } from '../lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(drawer)
+export type DrawerProps = Assign<ArkDrawerProps, DrawerVariantProps>
 
-const Drawer = withProvider(ArkDrawer.Root)
+const Drawer: Component<DrawerProps> = withProvider(ArkDrawer.Root)
 const DrawerBackdrop = withContext(ArkDrawer.Backdrop, 'backdrop')
 const DrawerBody = withContext('div', 'body')
 const DrawerCloseTrigger = withContext(ArkDrawer.CloseTrigger, 'closeTrigger')
@@ -30,22 +35,22 @@ const Title = DrawerTitle
 const Trigger = DrawerTrigger
 
 export {
+  // Drawer,
+  // DrawerBackdrop,
+  // DrawerBody,
+  // DrawerCloseTrigger,
+  // DrawerContent,
+  // DrawerDescription,
+  // DrawerFooter,
+  // DrawerHeader,
+  // DrawerPositioner,
+  // DrawerTitle,
+  // DrawerTrigger,
   Backdrop,
   Body,
   CloseTrigger,
   Content,
   Description,
-  Drawer,
-  DrawerBackdrop,
-  DrawerBody,
-  DrawerCloseTrigger,
-  DrawerContent,
-  DrawerDescription,
-  DrawerFooter,
-  DrawerHeader,
-  DrawerPositioner,
-  DrawerTitle,
-  DrawerTrigger,
   Footer,
   Header,
   Positioner,

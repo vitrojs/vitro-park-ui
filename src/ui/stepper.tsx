@@ -20,7 +20,7 @@ export const Steps = (props: { children: JSX.Child }) => {
   )
 }
 
-type StepProps = {
+export type StepProps = {
   number: string
   title: string
   children?: JSX.Child

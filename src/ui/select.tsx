@@ -1,11 +1,21 @@
-import { Select as ArkSelect } from '@vitro/ark/select'
+import {
+  Select as ArkSelect,
+  CollectionItem,
+  type SelectProps as ArkSelectProps,
+} from '@vitro/ark'
 
-import { select } from 'styled-system/recipes'
-import { createStyleContext } from '../lib/create-style-context'
+import { select, type SelectVariantProps } from 'styled-system/recipes'
+import { Assign, createStyleContext } from '../lib/create-style-context'
+import { Component } from 'vitro'
 
 const { withProvider, withContext } = createStyleContext(select)
 
-const Select = withProvider(ArkSelect.Root, 'root')
+export type SelectProps = Assign<
+  ArkSelectProps<CollectionItem>,
+  SelectVariantProps
+>
+
+const Select: Component<SelectProps> = withProvider(ArkSelect.Root, 'root')
 const SelectClearTrigger = withContext(ArkSelect.ClearTrigger, 'clearTrigger')
 const SelectContent = withContext(ArkSelect.Content, 'content')
 const SelectControl = withContext(ArkSelect.Control, 'control')
@@ -42,6 +52,21 @@ const Trigger = SelectTrigger
 const ValueText = SelectValueText
 
 export {
+  // Select,
+  // SelectClearTrigger,
+  // SelectContent,
+  // SelectControl,
+  // SelectIndicator,
+  // SelectItem,
+  // SelectItemGroup,
+  // SelectItemGroupLabel,
+  // SelectItemIndicator,
+  // SelectItemText,
+  // SelectLabel,
+  // SelectPositioner,
+  // SelectTrigger,
+  // SelectValueText,
+
   ClearTrigger,
   Content,
   Control,
@@ -54,20 +79,6 @@ export {
   Label,
   Positioner,
   Root,
-  Select,
-  SelectClearTrigger,
-  SelectContent,
-  SelectControl,
-  SelectIndicator,
-  SelectItem,
-  SelectItemGroup,
-  SelectItemGroupLabel,
-  SelectItemIndicator,
-  SelectItemText,
-  SelectLabel,
-  SelectPositioner,
-  SelectTrigger,
-  SelectValueText,
   Trigger,
   ValueText,
 }

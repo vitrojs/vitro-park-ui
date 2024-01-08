@@ -1,9 +1,12 @@
 import { card } from 'styled-system/recipes'
 import { createStyleContext } from '../lib/create-style-context'
+import { Component } from 'vitro'
 
 const { withProvider, withContext } = createStyleContext(card)
 
-const Card = withProvider('div', 'root')
+export type CardProps = JSX.IntrinsicElements['div']
+
+const Card: Component<CardProps> = withProvider('div', 'root')
 const CardBody = withContext('div', 'body')
 const CardDescription = withContext('p', 'description')
 const CardFooter = withContext('div', 'footer')
@@ -18,16 +21,16 @@ const Header = CardHeader
 const Title = CardTitle
 
 export {
-  Body,
-  Card,
-  CardBody,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
+  // Card,
+  // CardBody,
+  // CardDescription,
+  // CardFooter,
+  // CardHeader,
+  // CardTitle,
   Description,
   Footer,
   Header,
+  Body,
   Root,
   Title,
 }

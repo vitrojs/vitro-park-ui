@@ -1,10 +1,10 @@
-import { Tabs as ArkTabs } from '@vitro/ark/tabs'
+import { Tabs as ArkTabs, type TabsProps as ArkTabsProps } from '@vitro/ark'
 
-import { tabs } from 'styled-system/recipes'
-import { createStyleContext } from '../lib/create-style-context'
+import { tabs, type TableVariantProps } from 'styled-system/recipes'
+import { Assign, createStyleContext } from '../lib/create-style-context'
+import { Component } from 'vitro'
 
 const { withProvider, withContext } = createStyleContext(tabs)
-
 const Tabs = withProvider(ArkTabs.Root, 'root')
 const TabsContent = withContext(ArkTabs.Content, 'content')
 const TabsIndicator = withContext(ArkTabs.Indicator, 'indicator')
@@ -18,14 +18,15 @@ const List = TabsList
 const Trigger = TabsTrigger
 
 export {
+  // Tabs,
+  // TabsContent,
+  // TabsIndicator,
+  // TabsList,
+  // TabsTrigger,
+
   Content,
   Indicator,
   List,
   Root,
-  Tabs,
-  TabsContent,
-  TabsIndicator,
-  TabsList,
-  TabsTrigger,
   Trigger,
 }

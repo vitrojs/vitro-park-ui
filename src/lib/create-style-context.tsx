@@ -9,15 +9,15 @@ type StyleRecipe = {
 type StyleSlot<R extends StyleRecipe> = keyof ReturnType<R>
 type StyleSlotRecipe<R extends StyleRecipe> = Record<StyleSlot<R>, string>
 
-export type CombineProps<T, U> = Omit<T, keyof U> & U
+export type Assign<T, U> = Omit<T, keyof U> & U
 
 type ComponentVariants<
   T extends keyof JSX.IntrinsicElements | ((props: any) => JSX.Child),
   R extends StyleRecipe,
 > = T extends keyof JSX.IntrinsicElements
-  ? (props: CombineProps<JSX.IntrinsicElements[T], R['__type']>) => JSX.Child
+  ? (props: Assign<JSX.IntrinsicElements[T], R['__type']>) => JSX.Child
   : T extends (props: infer P) => JSX.Child
-    ? (props: CombineProps<P, R['__type']>) => JSX.Child
+    ? (props: Assign<P, R['__type']>) => JSX.Child
     : never
 
 export const createStyleContext = <R extends StyleRecipe>(recipe: R) => {
@@ -50,7 +50,7 @@ export const createStyleContext = <R extends StyleRecipe>(recipe: R) => {
   const withContext = <T,>(component: T, slot?: StyleSlot<R>): T => {
     if (!slot) return component as unknown as T
     const slotStyles = useContext(StyleContext)
-    return ((props: CombineProps<T, R>) =>
+    return ((props: Assign<T, R>) =>
       h(
         component as any,
         {

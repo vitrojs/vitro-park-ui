@@ -1,11 +1,23 @@
-import { ColorPicker as ArkColorPicker } from '@vitro/ark/color-picker'
+import {
+  ColorPicker as ArkColorPicker,
+  type ColorPickerProps as ArkColorPickerProps,
+} from '@vitro/ark'
 
-import { colorPicker } from 'styled-system/recipes'
-import { createStyleContext } from '../lib/create-style-context'
+import { colorPicker, ColorPickerVariantProps } from 'styled-system/recipes'
+import { Assign, createStyleContext } from '../lib/create-style-context'
+import { Component } from 'vitro'
 
 const { withProvider, withContext } = createStyleContext(colorPicker)
 
-const ColorPicker = withProvider(ArkColorPicker.Root, 'root')
+export type ColorPickerProps = Assign<
+  ArkColorPickerProps,
+  ColorPickerVariantProps
+>
+
+const ColorPicker: Component<ColorPickerProps> = withProvider(
+  ArkColorPicker.Root,
+  'root',
+)
 const ColorPickerArea = withContext(ArkColorPicker.Area, 'area')
 const ColorPickerAreaBackground = withContext(
   ArkColorPicker.AreaBackground,
@@ -93,6 +105,30 @@ const ValueText = ColorPickerValueText
 const View = ColorPickerView
 
 export {
+  // ColorPicker,
+  // ColorPickerArea,
+  // ColorPickerAreaBackground,
+  // ColorPickerAreaThumb,
+  // ColorPickerChannelInput,
+  // ColorPickerChannelSlider,
+  // ColorPickerChannelSliderThumb,
+  // ColorPickerChannelSliderTrack,
+  // ColorPickerContent,
+  // ColorPickerControl,
+  // ColorPickerEyeDropperTrigger,
+  // ColorPickerFormatSelect,
+  // ColorPickerFormatTrigger,
+  // ColorPickerLabel,
+  // ColorPickerPositioner,
+  // ColorPickerSwatch,
+  // ColorPickerSwatchGroup,
+  // ColorPickerSwatchIndicator,
+  // ColorPickerSwatchTrigger,
+  // ColorPickerTransparencyGrid,
+  // ColorPickerTrigger,
+  // ColorPickerValueText,
+  // ColorPickerView,
+
   Area,
   AreaBackground,
   AreaThumb,
@@ -100,29 +136,6 @@ export {
   ChannelSlider,
   ChannelSliderThumb,
   ChannelSliderTrack,
-  ColorPicker,
-  ColorPickerArea,
-  ColorPickerAreaBackground,
-  ColorPickerAreaThumb,
-  ColorPickerChannelInput,
-  ColorPickerChannelSlider,
-  ColorPickerChannelSliderThumb,
-  ColorPickerChannelSliderTrack,
-  ColorPickerContent,
-  ColorPickerControl,
-  ColorPickerEyeDropperTrigger,
-  ColorPickerFormatSelect,
-  ColorPickerFormatTrigger,
-  ColorPickerLabel,
-  ColorPickerPositioner,
-  ColorPickerSwatch,
-  ColorPickerSwatchGroup,
-  ColorPickerSwatchIndicator,
-  ColorPickerSwatchTrigger,
-  ColorPickerTransparencyGrid,
-  ColorPickerTrigger,
-  ColorPickerValueText,
-  ColorPickerView,
   Content,
   Control,
   EyeDropperTrigger,

@@ -1,11 +1,25 @@
-import { RadioGroup as ArkRadioButtonGroup } from '@vitro/ark/radio-group'
+import {
+  RadioGroup as ArkRadioButtonGroup,
+  type RadioGroupProps as ArkRadioButtonGroupProps,
+} from '@vitro/ark'
 
-import { radioButtonGroup } from 'styled-system/recipes'
-import { createStyleContext } from '../lib/create-style-context'
+import {
+  radioButtonGroup,
+  type RadioButtonGroupVariantProps,
+} from 'styled-system/recipes'
+import { Assign, createStyleContext } from '../lib/create-style-context'
+import { Component } from 'vitro'
 
 const { withProvider, withContext } = createStyleContext(radioButtonGroup)
+export type RadioButtonGroupProps = Assign<
+  ArkRadioButtonGroupProps,
+  RadioButtonGroupVariantProps
+>
 
-const RadioButtonGroup = withProvider(ArkRadioButtonGroup.Root, 'root')
+const RadioButtonGroup: Component<RadioButtonGroupProps> = withProvider(
+  ArkRadioButtonGroup.Root,
+  'root',
+)
 const RadioButtonGroupIndicator = withContext(
   ArkRadioButtonGroup.Indicator,
   'indicator',
@@ -29,16 +43,17 @@ const ItemText = RadioButtonGroupItemText
 const Label = RadioButtonGroupLabel
 
 export {
+  // RadioButtonGroup,
+  // RadioButtonGroupIndicator,
+  // RadioButtonGroupItem,
+  // RadioButtonGroupItemControl,
+  // RadioButtonGroupItemText,
+  // RadioButtonGroupLabel,
+
   Indicator,
   Item,
   ItemControl,
   ItemText,
   Label,
-  RadioButtonGroup,
-  RadioButtonGroupIndicator,
-  RadioButtonGroupItem,
-  RadioButtonGroupItemControl,
-  RadioButtonGroupItemText,
-  RadioButtonGroupLabel,
   Root,
 }

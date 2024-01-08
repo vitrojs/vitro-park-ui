@@ -1,10 +1,13 @@
-import { HoverCard as ArkHoverCard } from '@vitro/ark/hover-card'
+import {
+  HoverCard as ArkHoverCard,
+  type HoverCardProps as ArkHoverCardProps,
+} from '@vitro/ark'
 
-import { hoverCard } from 'styled-system/recipes'
-import { createStyleContext } from '../lib/create-style-context'
+import { hoverCard, type HoverCardVariantProps } from 'styled-system/recipes'
+import { Assign, createStyleContext } from '../lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(hoverCard)
-
+export type HoverCardProps = Assign<ArkHoverCardProps, HoverCardVariantProps>
 const HoverCard = withProvider(ArkHoverCard.Root)
 const HoverCardArrow = withContext(ArkHoverCard.Arrow, 'arrow')
 const HoverCardArrowTip = withContext(ArkHoverCard.ArrowTip, 'arrowTip')
@@ -20,15 +23,16 @@ const Positioner = HoverCardPositioner
 const Trigger = HoverCardTrigger
 
 export {
+  // HoverCard,
+  // HoverCardArrow,
+  // HoverCardArrowTip,
+  // HoverCardContent,
+  // HoverCardPositioner,
+  // HoverCardTrigger,
+
   Arrow,
   ArrowTip,
   Content,
-  HoverCard,
-  HoverCardArrow,
-  HoverCardArrowTip,
-  HoverCardContent,
-  HoverCardPositioner,
-  HoverCardTrigger,
   Positioner,
   Root,
   Trigger,

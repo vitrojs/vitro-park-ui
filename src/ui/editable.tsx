@@ -1,11 +1,20 @@
-import { Editable as ArkEditable } from '@vitro/ark/editable'
+import {
+  Editable as ArkEditable,
+  type EditableProps as ArkEditableProps,
+} from '@vitro/ark'
 
-import { editable } from 'styled-system/recipes'
-import { createStyleContext } from '../lib/create-style-context'
+import { editable, type EditableVariantProps } from 'styled-system/recipes'
+import { Assign, createStyleContext } from '../lib/create-style-context'
+import { Component } from 'vitro'
 
 const { withProvider, withContext } = createStyleContext(editable)
 
-const Editable = withProvider(ArkEditable.Root, 'root')
+export type EditableProps = Assign<ArkEditableProps, EditableVariantProps>
+
+const Editable: Component<EditableProps> = withProvider(
+  ArkEditable.Root,
+  'root',
+)
 const EditableArea = withContext(ArkEditable.Area, 'area')
 const EditableCancelTrigger = withContext(
   ArkEditable.CancelTrigger,
@@ -32,19 +41,20 @@ const Preview = EditablePreview
 const SubmitTrigger = EditableSubmitTrigger
 
 export {
+  // Editable,
+  // EditableArea,
+  // EditableCancelTrigger,
+  // EditableControl,
+  // EditableEditTrigger,
+  // EditableInput,
+  // EditableLabel,
+  // EditablePreview,
+  // EditableSubmitTrigger,
+
   Area,
   CancelTrigger,
   Control,
   EditTrigger,
-  Editable,
-  EditableArea,
-  EditableCancelTrigger,
-  EditableControl,
-  EditableEditTrigger,
-  EditableInput,
-  EditableLabel,
-  EditablePreview,
-  EditableSubmitTrigger,
   Input,
   Label,
   Preview,

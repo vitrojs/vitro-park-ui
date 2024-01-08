@@ -1,11 +1,16 @@
-import { Tooltip as ArkTooltip } from '@vitro/ark/tooltip'
+import {
+  Tooltip as ArkTooltip,
+  type TooltipProps as ArkTooltipProps,
+} from '@vitro/ark'
 
-import { tooltip } from 'styled-system/recipes'
-import { createStyleContext } from '../lib/create-style-context'
+import { tooltip, type TooltipVariantProps } from 'styled-system/recipes'
+import { Assign, createStyleContext } from '../lib/create-style-context'
+import { Component } from 'vitro'
 
 const { withProvider, withContext } = createStyleContext(tooltip)
+export type TooltipProps = Assign<ArkTooltipProps, TooltipVariantProps>
 
-const Tooltip = withProvider(ArkTooltip.Root)
+const Tooltip: Component<TooltipProps> = withProvider(ArkTooltip.Root)
 const TooltipArrow = withContext(ArkTooltip.Arrow, 'arrow')
 const TooltipArrowTip = withContext(ArkTooltip.ArrowTip, 'arrowTip')
 const TooltipContent = withContext(ArkTooltip.Content, 'content')
@@ -20,16 +25,16 @@ const Positioner = TooltipPositioner
 const Trigger = TooltipTrigger
 
 export {
+  // Tooltip,
+  // TooltipArrow,
+  // TooltipArrowTip,
+  // TooltipContent,
+  // TooltipPositioner,
+  // TooltipTrigger,
   Arrow,
   ArrowTip,
   Content,
   Positioner,
   Root,
-  Tooltip,
-  TooltipArrow,
-  TooltipArrowTip,
-  TooltipContent,
-  TooltipPositioner,
-  TooltipTrigger,
   Trigger,
 }

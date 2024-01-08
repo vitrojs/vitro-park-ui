@@ -1,10 +1,13 @@
-import { Popover as ArkPopover } from '@vitro/ark/popover'
+import {
+  Popover as ArkPopover,
+  type PopoverProps as ArkPopoverProps,
+} from '@vitro/ark'
 
-import { popover } from 'styled-system/recipes'
-import { createStyleContext } from '../lib/create-style-context'
+import { PopoverVariantProps, popover } from 'styled-system/recipes'
+import { Assign, createStyleContext } from '../lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(popover)
-
+export type PopoverProps = Assign<ArkPopoverProps, PopoverVariantProps>
 const Popover = withProvider(ArkPopover.Root)
 const PopoverAnchor = withContext(ArkPopover.Anchor, 'anchor')
 const PopoverArrow = withContext(ArkPopover.Arrow, 'arrow')
@@ -30,6 +33,18 @@ const Title = PopoverTitle
 const Trigger = PopoverTrigger
 
 export {
+  // Popover,
+  // PopoverAnchor,
+  // PopoverArrow,
+  // PopoverArrowTip,
+  // PopoverCloseTrigger,
+  // PopoverContent,
+  // PopoverDescription,
+  // PopoverIndicator,
+  // PopoverPositioner,
+  // PopoverTitle,
+  // PopoverTrigger,
+
   Anchor,
   Arrow,
   ArrowTip,
@@ -37,17 +52,6 @@ export {
   Content,
   Description,
   Indicator,
-  Popover,
-  PopoverAnchor,
-  PopoverArrow,
-  PopoverArrowTip,
-  PopoverCloseTrigger,
-  PopoverContent,
-  PopoverDescription,
-  PopoverIndicator,
-  PopoverPositioner,
-  PopoverTitle,
-  PopoverTrigger,
   Positioner,
   Root,
   Title,

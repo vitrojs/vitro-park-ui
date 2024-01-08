@@ -1,9 +1,13 @@
-import { FileUpload as ArkFileUpload } from '@vitro/ark/file-upload'
+import {
+  FileUpload as ArkFileUpload,
+  type FileUploadProps as ArkFileUploadProps,
+} from '@vitro/ark'
 
-import { fileUpload } from 'styled-system/recipes'
-import { createStyleContext } from '../lib/create-style-context'
+import { fileUpload, type FileUploadVariantProps } from 'styled-system/recipes'
+import { Assign, createStyleContext } from '../lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(fileUpload)
+export type FileUploadProps = Assign<ArkFileUploadProps, FileUploadVariantProps>
 
 const FileUpload = withProvider(ArkFileUpload.Root, 'root')
 const FileUploadDropzone = withContext(ArkFileUpload.Dropzone, 'dropzone')

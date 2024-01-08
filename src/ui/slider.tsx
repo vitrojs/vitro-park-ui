@@ -1,11 +1,16 @@
-import { Slider as ArkSlider } from '@vitro/ark/slider'
+import {
+  Slider as ArkSlider,
+  type SliderProps as ArkSliderProps,
+} from '@vitro/ark'
 
-import { slider } from 'styled-system/recipes'
-import { createStyleContext } from '../lib/create-style-context'
+import { SliderVariantProps, slider } from 'styled-system/recipes'
+import { Assign, createStyleContext } from '../lib/create-style-context'
+import { Component } from 'vitro'
 
 const { withProvider, withContext } = createStyleContext(slider)
+export type SliderProps = Assign<ArkSliderProps, SliderVariantProps>
 
-const Slider = withProvider(ArkSlider.Root, 'root')
+const Slider: Component<SliderProps> = withProvider(ArkSlider.Root, 'root')
 const SliderControl = withContext(ArkSlider.Control, 'control')
 const SliderLabel = withContext(ArkSlider.Label, 'label')
 const SliderMarker = withContext(ArkSlider.Marker, 'marker')
@@ -26,21 +31,22 @@ const Track = SliderTrack
 const ValueText = SliderValueText
 
 export {
+  // Slider,
+  // SliderControl,
+  // SliderLabel,
+  // SliderMarker,
+  // SliderMarkerGroup,
+  // SliderRange,
+  // SliderThumb,
+  // SliderTrack,
+  // SliderValueText,
+
   Control,
   Label,
   Marker,
   MarkerGroup,
   Range,
   Root,
-  Slider,
-  SliderControl,
-  SliderLabel,
-  SliderMarker,
-  SliderMarkerGroup,
-  SliderRange,
-  SliderThumb,
-  SliderTrack,
-  SliderValueText,
   Thumb,
   Track,
   ValueText,

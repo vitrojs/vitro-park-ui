@@ -1,9 +1,14 @@
-import { table } from 'styled-system/recipes'
-import { createStyleContext } from '../lib/create-style-context'
+import { table, type TableVariantProps } from 'styled-system/recipes'
+import { Assign, createStyleContext } from '../lib/create-style-context'
+import { Component } from 'vitro'
 
 const { withProvider, withContext } = createStyleContext(table)
+export type TableProps = Assign<
+  JSX.IntrinsicElements['table'],
+  TableVariantProps
+>
 
-const Table = withProvider('table', 'root')
+const Table: Component<TableProps> = withProvider('table', 'root')
 const TableBody = withContext('tbody', 'body')
 const TableCaption = withContext('caption', 'caption')
 const TableCell = withContext('td', 'cell')
@@ -22,6 +27,15 @@ const Header = TableHeader
 const Row = TableRow
 
 export {
+  // Table,
+  // TableBody,
+  // TableCaption,
+  // TableCell,
+  // TableFooter,
+  // TableHead,
+  // TableHeader,
+  // TableRow,
+
   Body,
   Caption,
   Cell,
@@ -30,12 +44,4 @@ export {
   Header,
   Root,
   Row,
-  Table,
-  TableBody,
-  TableCaption,
-  TableCell,
-  TableFooter,
-  TableHead,
-  TableHeader,
-  TableRow,
 }

@@ -1,11 +1,19 @@
-import { DatePicker as ArkDatePicker } from '@vitro/ark/date-picker'
+import {
+  DatePicker as ArkDatePicker,
+  type DatePickerProps as ArkDatePickerProps,
+} from '@vitro/ark'
 
-import { datePicker } from 'styled-system/recipes'
-import { createStyleContext } from '../lib/create-style-context'
+import { datePicker, type DatePickerVariantProps } from 'styled-system/recipes'
+import { Component } from 'vitro'
+import { Assign, createStyleContext } from '../lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(datePicker)
+export type DatePickerProps = Assign<ArkDatePickerProps, DatePickerVariantProps>
 
-const DatePicker = withProvider(ArkDatePicker.Root, 'root')
+const DatePicker: Component<DatePickerProps> = withProvider(
+  ArkDatePicker.Root,
+  'root',
+)
 const DatePickerClearTrigger = withContext(
   ArkDatePicker.ClearTrigger,
   'clearTrigger',
@@ -78,32 +86,32 @@ const ViewTrigger = DatePickerViewTrigger
 const YearSelect = DatePickerYearSelect
 
 export {
+  // DatePicker,
+  // DatePickerClearTrigger,
+  // DatePickerContent,
+  // DatePickerControl,
+  // DatePickerInput,
+  // DatePickerLabel,
+  // DatePickerMonthSelect,
+  // DatePickerNextTrigger,
+  // DatePickerPositioner,
+  // DatePickerPrevTrigger,
+  // DatePickerRangeText,
+  // DatePickerTable,
+  // DatePickerTableBody,
+  // DatePickerTableCell,
+  // DatePickerTableCellTrigger,
+  // DatePickerTableHead,
+  // DatePickerTableHeader,
+  // DatePickerTableRow,
+  // DatePickerTrigger,
+  // DatePickerView,
+  // DatePickerViewControl,
+  // DatePickerViewTrigger,
+  // DatePickerYearSelect,
   ClearTrigger,
   Content,
   Control,
-  DatePicker,
-  DatePickerClearTrigger,
-  DatePickerContent,
-  DatePickerControl,
-  DatePickerInput,
-  DatePickerLabel,
-  DatePickerMonthSelect,
-  DatePickerNextTrigger,
-  DatePickerPositioner,
-  DatePickerPrevTrigger,
-  DatePickerRangeText,
-  DatePickerTable,
-  DatePickerTableBody,
-  DatePickerTableCell,
-  DatePickerTableCellTrigger,
-  DatePickerTableHead,
-  DatePickerTableHeader,
-  DatePickerTableRow,
-  DatePickerTrigger,
-  DatePickerView,
-  DatePickerViewControl,
-  DatePickerViewTrigger,
-  DatePickerYearSelect,
   Input,
   Label,
   MonthSelect,

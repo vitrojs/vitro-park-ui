@@ -1,11 +1,20 @@
-import { Checkbox as ArkCheckbox } from '@vitro/ark/checkbox'
+import {
+  Checkbox as ArkCheckbox,
+  type CheckboxProps as ArkCheckboxProps,
+} from '@vitro/ark'
 
-import { checkbox } from 'styled-system/recipes'
-import { createStyleContext } from '../lib/create-style-context'
+import { checkbox, type AccordionVariantProps } from 'styled-system/recipes'
+import { Assign, createStyleContext } from '../lib/create-style-context'
+import { Component } from 'vitro'
 
 const { withProvider, withContext } = createStyleContext(checkbox)
 
-const Checkbox = withProvider(ArkCheckbox.Root, 'root')
+export type CheckboxProps = Assign<ArkCheckboxProps, AccordionVariantProps>
+
+const Checkbox: Component<CheckboxProps> = withProvider(
+  ArkCheckbox.Root,
+  'root',
+)
 const CheckboxControl = withContext(ArkCheckbox.Control, 'control')
 const CheckboxIndicator = withContext(ArkCheckbox.Indicator, 'indicator')
 const CheckboxLabel = withContext(ArkCheckbox.Label, 'label')
@@ -16,10 +25,10 @@ const Indicator = CheckboxIndicator
 const Label = CheckboxLabel
 
 export {
-  Checkbox,
-  CheckboxControl,
-  CheckboxIndicator,
-  CheckboxLabel,
+  // Checkbox,
+  // CheckboxControl,
+  // CheckboxIndicator,
+  // CheckboxLabel,
   Control,
   Indicator,
   Label,

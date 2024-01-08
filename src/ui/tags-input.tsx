@@ -1,15 +1,23 @@
-import { TagsInput as ArkTagsInput } from '@vitro/ark/tags-input'
+import {
+  TagsInput as ArkTagsInput,
+  type TagsInputProps as ArkTagsInputProps,
+} from '@vitro/ark'
 
-import { tagsInput } from 'styled-system/recipes'
-import { createStyleContext } from '../lib/create-style-context'
+import { tagsInput, type TagsInputVariantProps } from 'styled-system/recipes'
+import { Assign, createStyleContext } from '../lib/create-style-context'
+import { Component } from 'vitro'
 
 const { withProvider, withContext } = createStyleContext(tagsInput)
-
-const TagsInput = withProvider(ArkTagsInput.Root, 'root')
+export type TagsInputProps = Assign<ArkTagsInputProps, TagsInputVariantProps>
+const TagsInput: Component<TagsInputProps> = withProvider(
+  ArkTagsInput.Root,
+  'root',
+)
 const TagsInputClearTrigger = withContext(
   ArkTagsInput.ClearTrigger,
   'clearTrigger',
 )
+
 const TagsInputControl = withContext(ArkTagsInput.Control, 'control')
 const TagsInputInput = withContext(ArkTagsInput.Input, 'input')
 const TagsInputItem = withContext(ArkTagsInput.Item, 'item')
@@ -32,6 +40,16 @@ const ItemText = TagsInputItemText
 const Label = TagsInputLabel
 
 export {
+  // TagsInput,
+  // TagsInputClearTrigger,
+  // TagsInputControl,
+  // TagsInputInput,
+  // TagsInputItem,
+  // TagsInputItemDeleteTrigger,
+  // TagsInputItemInput,
+  // TagsInputItemText,
+  // TagsInputLabel,
+
   ClearTrigger,
   Control,
   Input,
@@ -41,13 +59,4 @@ export {
   ItemText,
   Label,
   Root,
-  TagsInput,
-  TagsInputClearTrigger,
-  TagsInputControl,
-  TagsInputInput,
-  TagsInputItem,
-  TagsInputItemDeleteTrigger,
-  TagsInputItemInput,
-  TagsInputItemText,
-  TagsInputLabel,
 }

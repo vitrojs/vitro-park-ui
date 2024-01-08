@@ -1,11 +1,15 @@
-import { Dialog as ArkDialog } from '@vitro/ark/dialog'
+import {
+  Dialog as ArkDialog,
+  type DialogProps as ArkDialogProps,
+} from '@vitro/ark'
 
-import { dialog } from 'styled-system/recipes'
-import { createStyleContext } from '../lib/create-style-context'
+import { dialog, type DialogVariantProps } from 'styled-system/recipes'
+import { Assign, createStyleContext } from '../lib/create-style-context'
+import { Component } from 'vitro'
 
 const { withProvider, withContext } = createStyleContext(dialog)
-
-const Dialog = withProvider(ArkDialog.Root)
+export type DialogProps = Assign<ArkDialogProps, DialogVariantProps>
+const Dialog: Component<DialogProps> = withProvider(ArkDialog.Root)
 const DialogBackdrop = withContext(ArkDialog.Backdrop, 'backdrop')
 const DialogCloseTrigger = withContext(ArkDialog.CloseTrigger, 'closeTrigger')
 const DialogContent = withContext(ArkDialog.Content, 'content')
@@ -24,18 +28,18 @@ const Title = DialogTitle
 const Trigger = DialogTrigger
 
 export {
+  // Dialog,
+  // DialogBackdrop,
+  // DialogCloseTrigger,
+  // DialogContent,
+  // DialogDescription,
+  // DialogPositioner,
+  // DialogTitle,
+  // DialogTrigger,
   Backdrop,
   CloseTrigger,
   Content,
   Description,
-  Dialog,
-  DialogBackdrop,
-  DialogCloseTrigger,
-  DialogContent,
-  DialogDescription,
-  DialogPositioner,
-  DialogTitle,
-  DialogTrigger,
   Positioner,
   Root,
   Title,

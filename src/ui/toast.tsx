@@ -1,11 +1,14 @@
-import { Toast as ArkToast } from '@vitro/ark/toast'
+import { Toast as ArkToast, type ToastProps as ArkToastProps } from '@vitro/ark'
 
-import { toast } from 'styled-system/recipes'
-import { createStyleContext } from '../lib/create-style-context'
+import { toast, type ToastVariantProps } from 'styled-system/recipes'
+import { Assign, createStyleContext } from '../lib/create-style-context'
+import { Component } from 'vitro'
 
 const { withProvider, withContext } = createStyleContext(toast)
 
-const Toast = withProvider(ArkToast.Root, 'root')
+export type ToastProps = Assign<ArkToastProps, ToastVariantProps>
+
+const Toast: Component<ToastProps> = withProvider(ArkToast.Root, 'root')
 const ToastCloseTrigger = withContext(ArkToast.CloseTrigger, 'closeTrigger')
 const ToastDescription = withContext(ArkToast.Description, 'description')
 const ToastGroup = withContext(ArkToast.Group, 'group')
@@ -18,14 +21,15 @@ const Group = ToastGroup
 const Title = ToastTitle
 
 export {
+  // Toast,
+  // ToastCloseTrigger,
+  // ToastDescription,
+  // ToastGroup,
+  // ToastTitle,
+
   CloseTrigger,
   Description,
   Group,
   Root,
   Title,
-  Toast,
-  ToastCloseTrigger,
-  ToastDescription,
-  ToastGroup,
-  ToastTitle,
 }

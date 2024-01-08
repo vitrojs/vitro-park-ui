@@ -1,10 +1,18 @@
-import { Combobox as ArkCombobox } from '@vitro/ark/combobox'
+import {
+  Combobox as ArkCombobox,
+  CollectionItem,
+  type ComboboxProps as ArkComboboxProps,
+} from '@vitro/ark'
 
-import { combobox } from 'styled-system/recipes'
-import { createStyleContext } from '../lib/create-style-context'
+import { combobox, type ComboboxVariantProps } from 'styled-system/recipes'
+import { Assign, createStyleContext } from '../lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(combobox)
 
+export type ComboboxProps = Assign<
+  ArkComboboxProps<CollectionItem>,
+  ComboboxVariantProps
+>
 const Combobox = withProvider(ArkCombobox.Root, 'root')
 const ComboboxClearTrigger = withContext(
   ArkCombobox.ClearTrigger,
@@ -43,22 +51,22 @@ const Positioner = ComboboxPositioner
 const Trigger = ComboboxTrigger
 
 export {
-  ClearTrigger,
-  Combobox,
-  ComboboxClearTrigger,
-  ComboboxContent,
-  ComboboxControl,
-  ComboboxInput,
-  ComboboxItem,
-  ComboboxItemGroup,
-  ComboboxItemGroupLabel,
-  ComboboxItemIndicator,
-  ComboboxItemText,
-  ComboboxLabel,
-  ComboboxPositioner,
-  ComboboxTrigger,
+  // Combobox,
+  // ComboboxClearTrigger,
+  // ComboboxContent,
+  // ComboboxControl,
+  // ComboboxInput,
+  // ComboboxItem,
+  // ComboboxItemGroup,
+  // ComboboxItemGroupLabel,
+  // ComboboxItemIndicator,
+  // ComboboxItemText,
+  // ComboboxLabel,
+  // ComboboxPositioner,
+  // ComboboxTrigger,
   Content,
   Control,
+  ClearTrigger,
   Input,
   Item,
   ItemGroup,

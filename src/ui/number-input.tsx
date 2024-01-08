@@ -1,11 +1,25 @@
-import { NumberInput as ArkNumberInput } from '@vitro/ark/number-input'
+import {
+  NumberInput as ArkNumberInput,
+  type NumberInputProps as ArkNumberInputProps,
+} from '@vitro/ark'
 
-import { numberInput } from 'styled-system/recipes'
-import { createStyleContext } from '../lib/create-style-context'
+import {
+  numberInput,
+  type NumberInputVariantProps,
+} from 'styled-system/recipes'
+import { Assign, createStyleContext } from '../lib/create-style-context'
+import { Component } from 'vitro'
 
 const { withProvider, withContext } = createStyleContext(numberInput)
+export type NumberInputProps = Assign<
+  ArkNumberInputProps,
+  NumberInputVariantProps
+>
 
-const NumberInput = withProvider(ArkNumberInput.Root, 'root')
+const NumberInput: Component<NumberInputProps> = withProvider(
+  ArkNumberInput.Root,
+  'root',
+)
 const NumberInputControl = withContext(ArkNumberInput.Control, 'control')
 const NumberInputDecrementTrigger = withContext(
   ArkNumberInput.DecrementTrigger,
@@ -28,18 +42,19 @@ const Label = NumberInputLabel
 const Scrubber = NumberInputScrubber
 
 export {
+  // NumberInput,
+  // NumberInputControl,
+  // NumberInputDecrementTrigger,
+  // NumberInputIncrementTrigger,
+  // NumberInputInput,
+  // NumberInputLabel,
+  // NumberInputScrubber,
+
   Control,
   DecrementTrigger,
   IncrementTrigger,
   Input,
   Label,
-  NumberInput,
-  NumberInputControl,
-  NumberInputDecrementTrigger,
-  NumberInputIncrementTrigger,
-  NumberInputInput,
-  NumberInputLabel,
-  NumberInputScrubber,
   Root,
   Scrubber,
 }

@@ -1,9 +1,9 @@
 import {
   Accordion as ArkAccordion,
   type AccordionProps as ArkAccordionProps,
-} from '@vitro/ark/accordion'
+} from '@vitro/ark'
 import { AccordionRecipe, accordion } from 'styled-system/recipes'
-import { CombineProps, createStyleContext } from '../lib/create-style-context'
+import { Assign, createStyleContext } from '../lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(accordion)
 
@@ -29,11 +29,11 @@ const ItemIndicator = AccordionItemIndicator
 const ItemTrigger = AccordionItemTrigger
 
 export {
-  Accordion,
-  AccordionItem,
-  AccordionItemContent,
-  AccordionItemIndicator,
-  AccordionItemTrigger,
+  // Accordion,
+  // AccordionItem,
+  // AccordionItemContent,
+  // AccordionItemIndicator,
+  // AccordionItemTrigger,
   Item,
   ItemContent,
   ItemIndicator,
@@ -41,4 +41,4 @@ export {
   Root,
 }
 
-export type AccordionProps = CombineProps<ArkAccordionProps, AccordionRecipe>
+export type AccordionProps = Assign<ArkAccordionProps, AccordionRecipe>

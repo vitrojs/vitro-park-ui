@@ -1,5 +1,5 @@
 import { AlertVariantProps, alert } from 'styled-system/recipes'
-import { CombineProps, createStyleContext } from '../lib/create-style-context'
+import { Assign, createStyleContext } from '../lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(alert)
 
@@ -16,11 +16,11 @@ const Icon = AlertIcon
 const Title = AlertTitle
 
 export {
-  Alert,
-  AlertContent,
-  AlertDescription,
-  AlertIcon,
-  AlertTitle,
+  // Alert,
+  // AlertContent,
+  // AlertDescription,
+  // AlertIcon,
+  // AlertTitle,
   Content,
   Description,
   Icon,
@@ -28,7 +28,7 @@ export {
   Title,
 }
 
-export type AlertProps = CombineProps<
+export type AlertProps = Assign<
   JSX.HTMLAttributes<HTMLDivElement>,
   AlertVariantProps
 >

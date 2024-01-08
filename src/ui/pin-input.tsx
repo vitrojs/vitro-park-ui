@@ -1,11 +1,19 @@
-import { PinInput as ArkPinInput } from '@vitro/ark/pin-input'
+import {
+  PinInput as ArkPinInput,
+  type PinInputProps as ArkPinInputProps,
+} from '@vitro/ark'
 
-import { pinInput } from 'styled-system/recipes'
-import { createStyleContext } from '../lib/create-style-context'
+import { PinInputVariantProps, pinInput } from 'styled-system/recipes'
+import { Assign, createStyleContext } from '../lib/create-style-context'
+import { Component } from 'vitro'
 
 const { withProvider, withContext } = createStyleContext(pinInput)
+export type PinInputProps = Assign<ArkPinInputProps, PinInputVariantProps>
 
-const PinInput = withProvider(ArkPinInput.Root, 'root')
+const PinInput: Component<PinInputProps> = withProvider(
+  ArkPinInput.Root,
+  'root',
+)
 const PinInputControl = withContext(ArkPinInput.Control, 'control')
 const PinInputInput = withContext(ArkPinInput.Input, 'input')
 const PinInputLabel = withContext(ArkPinInput.Label, 'label')
@@ -16,12 +24,13 @@ const Input = PinInputInput
 const Label = PinInputLabel
 
 export {
+  // PinInput,
+  // PinInputControl,
+  // PinInputInput,
+  // PinInputLabel,
+
   Control,
   Input,
   Label,
-  PinInput,
-  PinInputControl,
-  PinInputInput,
-  PinInputLabel,
   Root,
 }

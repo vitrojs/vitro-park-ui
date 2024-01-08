@@ -1,1 +1,3 @@
-import { CombineProps } from '../lib/create-style-context'
+import type { Assign } from '../lib/create-style-context'
+
+export {}

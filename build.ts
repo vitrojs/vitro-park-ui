@@ -15,36 +15,8 @@ if (fs.existsSync(dist)) {
   fs.rmSync(dist, { recursive: true, force: true })
 }
 
-const tsx = fs.readdirSync('./src/ui').filter((it) => it.endsWith('.tsx'))
-
-if (isProduction) {
-  const exports = tsx.reduce(
-    (acc, it) => {
-      const entry = {
-        import: `./dist/ui/${it.replace('.tsx', '.js')}`,
-        types: `./src/ui/${it}`,
-      }
-      acc['./' + it.replace('.tsx', '')] = entry
-
-      return acc
-    },
-    {} as Record<string, any>,
-  )
-  exports['./create-style-context'] = {
-    import: './dist/lib/create-style-context.js',
-    types: './src/lib/create-style-context.tsx',
-  }
-
-  // @ts-ignore
-  pkg['exports'] = exports
-  fs.writeFileSync('package.json', JSON.stringify(pkg, null, 2))
-}
-
 buildSync({
-  entryPoints: [
-    './src/lib/create-style-context.tsx',
-    ...tsx.map((it) => `./src/ui/${it}`),
-  ],
+  entryPoints: ['./src/index.ts'],
   format: 'esm',
   outdir: 'dist',
   bundle: true,

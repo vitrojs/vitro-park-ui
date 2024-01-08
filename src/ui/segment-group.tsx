@@ -1,11 +1,21 @@
-import { SegmentGroup as ArkSegmentGroup } from '@vitro/ark/segment-group'
+import {
+  SegmentGroup as ArkSegmentGroup,
+  type SegmentGroupProps as ArkSegmentGroupProps,
+} from '@vitro/ark'
 
-import { segmentGroup } from 'styled-system/recipes'
-import { createStyleContext } from '../lib/create-style-context'
+import { SegmentGroupVariantProps, segmentGroup } from 'styled-system/recipes'
+import { Assign, createStyleContext } from '../lib/create-style-context'
+import { Component } from 'vitro'
 
 const { withProvider, withContext } = createStyleContext(segmentGroup)
-
-const SegmentGroup = withProvider(ArkSegmentGroup.Root, 'root')
+export type SegmentGroupProps = Assign<
+  ArkSegmentGroupProps,
+  SegmentGroupVariantProps
+>
+const SegmentGroup: Component<SegmentGroupProps> = withProvider(
+  ArkSegmentGroup.Root,
+  'root',
+)
 const SegmentGroupIndicator = withContext(
   ArkSegmentGroup.Indicator,
   'indicator',
@@ -26,16 +36,17 @@ const ItemText = SegmentGroupItemText
 const Label = SegmentGroupLabel
 
 export {
+  // SegmentGroup,
+  // SegmentGroupIndicator,
+  // SegmentGroupItem,
+  // SegmentGroupItemControl,
+  // SegmentGroupItemText,
+  // SegmentGroupLabel,
+
   Indicator,
   Item,
   ItemControl,
   ItemText,
   Label,
   Root,
-  SegmentGroup,
-  SegmentGroupIndicator,
-  SegmentGroupItem,
-  SegmentGroupItemControl,
-  SegmentGroupItemText,
-  SegmentGroupLabel,
 }
