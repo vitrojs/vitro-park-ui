@@ -16,6 +16,7 @@
   "scripts": {
     "build": "bun build.ts",
     "postinstall": "NODE_ENV=production bun build.ts",
+    "format": "prettier --write src",
     "dev": "panda"
   },
   "trustedDependencies": [
