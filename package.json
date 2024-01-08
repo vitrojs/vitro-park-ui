@@ -4,18 +4,9 @@
   "version": "0.0.1",
   "type": "module",
   "files": [
-    "dist",
     "src"
   ],
-  "exports": {
-    ".": {
-      "import": "./dist/index.js",
-      "types": "./src/index.ts"
-    }
-  },
   "scripts": {
-    "build": "bun build.ts",
-    "postinstall": "NODE_ENV=production bun build.ts",
     "format": "prettier --write src",
     "dev": "panda"
   },
@@ -28,12 +19,11 @@
     "@pandacss/dev": "^0.25.0",
     "@park-ui/panda-preset": "^0.28.0",
     "bun-types": "^1.0.21",
-    "esbuild": "^0.19.11",
     "prettier": "^3.1.1"
   },
   "peerDependencies": {
-    "vitro": "github:vitrojs/vitro",
+    "@vitro/ark": "github:vitrojs/vitro-ark",
     "@vitro/zag": "github:vitrojs/vitro-zag",
-    "@vitro/ark": "github:vitrojs/vitro-ark"
+    "vitro": "github:vitrojs/vitro"
   }
 }
