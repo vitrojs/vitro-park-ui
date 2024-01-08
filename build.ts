@@ -19,6 +19,7 @@ buildSync({
   entryPoints: ['./src/index.ts'],
   format: 'esm',
   outdir: 'dist',
+  tsconfig: path.join(import.meta.dir, 'tsconfig.json'),
   bundle: true,
   splitting: true,
   platform: 'browser',
